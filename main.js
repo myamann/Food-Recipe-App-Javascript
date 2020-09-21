@@ -1,11 +1,19 @@
 const searchForm = document.querySelector('form');
 const searchResultDiv = document.querySelector('.search-result');
+const searchIcon = document.querySelector('.icon');
 const container = document.querySelector('.container');
 let searchQuery = '';
 const APP_ID = '7146428d';
 const APP_key = '9a1522f782d938b3b4f7e00cde9a5135';
 const baseURL = `https://api.edamam.com/search?q=pizza&app_id=${APP_ID}&app_key=${APP_key}`;
 
+
+searchIcon.addEventListener('click',(e)=>{
+    e.preventDefault();
+    searchQuery = document.querySelector('input').value;
+    fetchAPI();
+    console.log('test icon',e);
+});
 
 searchForm.addEventListener('submit', (e) => {
     e.preventDefault();
